@@ -1,0 +1,24 @@
+
+
+.navbar-nav-dir{
+    text-align: end!important ;
+    align-items: end!important;
+    justify-content: end!important;
+}
+
+.navbar-nav-dir2{
+    text-align:start!important ;
+    align-items: start!important;
+    justify-content: start!important;
+}
+
+.imgs {
+    max-width: 600px!important;
+    
+}
+.services{
+    
+
+}
+
+/* Footer */
