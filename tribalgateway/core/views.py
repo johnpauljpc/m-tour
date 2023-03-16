@@ -5,7 +5,9 @@ def index(request):
     return render(request, "core/index.html")
 
 def register(request):
-    if not(request.user.is_superuser):
-        return redirect('/')
+    if request.user.is_anonymous:
+        return redirect('signup')
     
     return render(request, 'core/register.html')
+def contactUs(request):
+    return render(request, 'core/contact-us.html')
