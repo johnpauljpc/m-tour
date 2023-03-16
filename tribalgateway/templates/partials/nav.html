@@ -6,6 +6,29 @@
 -->
 <header class="header">
     <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'imgs/logo1.png' %}"  alt="Logo" width="44" height="34"> 
+                Tribalgateway
+                </a>
+            </div>
+            <button type="button" class="nav-toggler">
+                <span></span>
+             </button>
+            <!-- nav -->
+            <nav class="nav">
+                <ul>
+                    
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">testimonials</a></li>
+                </ul>
+            </nav>
+
+        </div>
 
     </div>
 </header>
