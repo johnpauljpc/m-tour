@@ -31,7 +31,7 @@ a{
 
 
 /* Navbar styling */
-.container{
+.container-nav{
 	max-width: 1170px;
 	margin:auto;
 }
@@ -40,10 +40,10 @@ a{
 	flex-wrap: wrap;
 }
 .align-items-center{
-	align-items: center;
+	align-items: center !important;
 }
 .justify-content-between{
-	justify-content: space-between;
+	justify-content: space-between !important;
 }
 
 .header{
@@ -181,6 +181,7 @@ font-size: 20px;
 
 .footer-icons a:hover{
     color: var(--hover-color);
+	background-color:var(--color-1);
 }
 
 .footer-copyright{

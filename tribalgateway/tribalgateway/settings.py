@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms'
 ]
 
+AUTH_USER_MODEL = 'account.Usermodel'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -139,3 +140,6 @@ from django.contrib import messages
 MESSAGE_TAGS ={
     messages.ERROR: 'danger'
 }
+
+
+AUTHENTICATION_BACKENDS = ['account.backends.EmailBackend']
