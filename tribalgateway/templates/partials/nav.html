@@ -27,7 +27,7 @@
                     {% if user.is_anonymous %}
                     <li><a href="{%url 'login' %}">Login<i class="fas fa-sign-in-alt"></i></a></li>
                     {% else %}
-                    <li><a href="#"><img src="{{user.passport.url}}" alt=""></a></li>
+                    <li><a href="#"><img src="{{user.passport.url}}" alt="" class="passport"></a></li>
                     {% endif %}
                 </ul>
             </nav>

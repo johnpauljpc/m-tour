@@ -1,19 +1,31 @@
-<form action="" class="login-form">
+{% extends 'base.html' %}
+{% block title %}home {% endblock title%}
+
+{% load static %}
+
+
+
+{% block content%}
+
+
+<form action="{% url 'login' %}" class="login-form" method="post">
+    {% csrf_token %}
     <div class="inputBox">
         <span>username</span>
-        <input type="text" placeholder="enter your name">
+        <input type="text" placeholder="enter your email or first name" name="username"> 
     </div>
 
     <div class="inputBox">
         <span>password</span>
-        <input type="password" placeholder="enter your password">
+        <input type="password" placeholder="enter your password" name="password">
+        <input type="submit" class="btn" value="Login">
+        <hr style="width: 90%; align-self: center; margin-left: 10px;">
     </div>
 
-    <div class="remember">
-        <input type="checkbox" name="" id="login-remember">
-        <label for="login-remember">remeber me</label>
-    </div>
+   <div class="inputBox"> Don't have an account yet? <a href="{%url 'signup' %}" style="text-align: center; color: #f3a93d; font-weight: bolder;">Signup</a></div>
+    
 
-    <input type="submit" value="login" class="btn">
 
 </form>
+
+{% endblock content%}

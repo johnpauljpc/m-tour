@@ -137,9 +137,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 from django.contrib import messages
 
-MESSAGE_TAGS ={
-    messages.ERROR: 'danger'
-}
+# MESSAGE_TAGS ={
+#     messages.ERROR: 'danger'
+# }
 
 
 AUTHENTICATION_BACKENDS = ['account.backends.EmailBackend']

@@ -1,0 +1,19 @@
+{% if messages %}
+<div class="messages" id="msg">
+    {% for message in messages %}
+    <p {% if message.tags %} class="alert-{{ message.tags }}"{% endif %}>{{ message|safe}}
+        <span class="alert-close "  onclick="rem()">&times;</span>
+    </p>
+    {% endfor %}
+</div>
+
+<script>
+    
+    msg = document.querySelector('#msg')
+    function rem(){
+        
+        
+        msg.style.display = "none"
+    }
+</script>
+{% endif %}
