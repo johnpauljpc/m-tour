@@ -1,5 +1,5 @@
 {% if messages %}
-<div class="messages" id="msg">
+<div class="messages" id="msg" data-aos="zoom-in" data-aos-easing="ease-in-out">
     {% for message in messages %}
     <p {% if message.tags %} class="alert-{{ message.tags }}"{% endif %}>{{ message|safe}}
         <span class="alert-close "  onclick="rem()">&times;</span>
