@@ -2,6 +2,7 @@
 :root{
     --color-1: #2f3240;
     --hover-color:#f3a93d;
+	--box-shadow:0 .5rem 1.5rem  rgba(0, 0, 0, .4);
 }
 html{
     height: 100%;
@@ -24,6 +25,7 @@ body{
 .content{
 	margin: 20px;
 	padding: 5px;
+	margin-top: 100px;
 
 }
 
@@ -55,14 +57,34 @@ a{
 	background-color: var(--color-1);
 	padding: 12px 0;
 	line-height: 1.5;
+	box-shadow: var(--box-shadow);
+	margin-bottom: 100px;
+	/* position: absolute; */
+	position:fixed;
+	width: 100%;
+	
 }
+.passport{
+	width: 35px;
+	height: 35px;
+	border-radius: 100%;
+	margin: 0px;
+	padding:0px;
+	display: inline-block;
+	border: solid 1px #f3a93d;
+	bottom: 0px;
+}
+.pass1{
+	display: none;
+}
+
 
 .header .logo,
 .header .nav{
 	padding:0 15px;
 }
 .header .logo a{
-	font-size: 30px;
+	font-size: 24px;
 	color: #ffffff;
 	text-transform: capitalize;
 }
@@ -131,40 +153,10 @@ a{
 .nav-toggler.active span::after{
 	transform: rotate(135deg);
 }
-@media(max-width:991px){
-   .nav-toggler{
-   	display: block;
-   }
-   .header .nav{
-   	width: 100%;
-   	padding:0;
-   	max-height: 0px;
-   	overflow: hidden;
-   	visibility: hidden;
-   	transition: all 0.5s ease;
-   }
-   .header .nav.open{
-   	visibility: visible;
-   }
-   .header .nav ul{
-   	padding:12px 15px 0;
-   	margin-top: 12px;
-   	border-top:1px solid rgba(255,255,255,0.2);
-   }
-   .header .nav ul li{
-   	display: block;
-   	margin:0;
-   }
-}
 
 
-.passport{
-	width: 35px;
-	height: 35px;
-	border-radius: 100%;
-	margin: 0px;
-	padding: 0px;
-}
+
+
 
 /* STYLING ALERT MESSAGES */
 .alert-success{
@@ -194,7 +186,6 @@ a{
 	border-radius: 10px;
 	text-align: center;
 	font-size: 20px;
-	font-weight: bolder;
 	text-overflow: none;
 }
 .messages p:hover{
@@ -218,24 +209,54 @@ a{
 
 /* Login Form */
 .inputBox{
-	width: 50%;
+	width: 90%;
 	
 	padding: 5px;
 	
+}
+.inputBox span{
+	display: block;
 }
 .inputBox input{
 	width: 90%;
 	padding: 10px;
 	border-radius: 5px;
 	margin: 2px 10px 10px 15px;
-	border: solid 2px #473e3e;
+	border-top: none;
 	background-color: #f6f4f4ee;
+	box-shadow: var(--box-shadow);
 	font-size: 20px;
 }
-.inputBox .btn{
-	width: 40%;
-	background-color: #f3a93d;
 
+.inputBox input:active{
+	border-top: none !important;
+	border-style: none;
+	box-shadow: var(--box-shadow);
+
+}
+.inputBox .btn {
+	width: 50%;
+	background-color: #f3a93d;
+	color: whitesmoke;
+	border: none;
+
+}
+
+.inputBox .btn:hover{
+	background-color: #b08a50;
+}
+
+/* styling Application form */
+.application, .login{
+	width: 60%;
+	
+}
+
+ .application p, .application h2{
+	width: 90%;
+	
+	padding: 5px;
+	
 }
 
 
@@ -283,3 +304,52 @@ font-size: 20px;
 }
 
 
+
+/* Media queries */
+
+@media(max-width:991px){
+	.nav-toggler{
+		display: block;
+	}
+	.header .nav{
+		width: 100%;
+		padding:0;
+		max-height: 0px;
+		overflow: hidden;
+		visibility: hidden;
+		transition: all 0.5s ease;
+	}
+	.header .nav.open{
+		visibility: visible;
+	}
+	.header .nav ul{
+		padding:12px 15px 0;
+		margin-top: 12px;
+		border-top:1px solid rgba(255,255,255,0.2);
+	}
+	.header .nav ul li{
+		display: block;
+		margin:0;
+	}
+	.pass1{
+		display: inline;
+		float: right;
+		margin-left: 60px;
+	}
+	.pass2{
+		display: none;
+	}
+
+	.application, .login{
+		width: 100%;
+		
+	}
+
+	.inputBox .btn {
+		width: 80%;
+		margin-top: 10px;
+	}
+	.messages p{
+		font-size: 18px;
+	}
+ }

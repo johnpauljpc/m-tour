@@ -4,219 +4,226 @@
 
 {% block content%}
 
-<form action="" method="post">
-    <div class="form-container" data-aos="fade-up">
-        <div class="inputBox" >
-            <span>name</span>
-            <input type="text" placeholder="">
+<section class="application">
+    <h2>Application form</h2>
+    <p>In order to process your application to receive 
+        your Fast Track Visa On Arrival (VOA), we need the following information</p>
+    <form action="/" method="get">
+        <div class="form-container" data-aos="fade-up">
+            <div class="inputBox" >
+                <span>name</span>
+                <input type="text" value="{{user.first_name}} {{user.last_name}}" placeholder="" name="get-started" readonly>
+            </div>
+    
+            <div class="inputBox" >
+                <span>phone</span>
+                <input type="number">
+            </div>   
         </div>
-
-        <div class="inputBox" >
-            <span>phone</span>
-            <input type="number">
-        </div>   
-    </div>
-
-    <div class="form-container" data-aos="zoom-in">
-        <div class="inputBox">
-            <span>email</span>
-            <input type="email">
+    
+        <div class="form-container" data-aos="zoom-in">
+            <div class="inputBox">
+                <span>email</span>
+                <input type="email" value="{{user.email}}" readonly>
+            </div>
+    
         </div>
-
-    </div>
-
-    <div class="form-container">
-        <div class="inputBox" >
-            <span>date of arrival</span>
-            <input type="date" placeholder="">
+    
+        <div class="form-container">
+            <div class="inputBox" >
+                <span>date of arrival</span>
+                <input type="date" placeholder="">
+            </div>
+    
+            <div class="inputBox" >
+                <span>time of arrival</span>
+                <input type="time">
+            </div>   
         </div>
-
-        <div class="inputBox" >
-            <span>time of arrival</span>
-            <input type="time">
-        </div>   
-    </div>
-
-    <div class="form-container">
-        <div class="inputBox" >
-            <span>airline</span>
-            <input type="text" placeholder="">
+    
+        <div class="form-container">
+            <div class="inputBox" >
+                <span>airline</span>
+                <input type="text" placeholder="">
+            </div>
+    
+            <div class="inputBox" >
+                <span>arrival airport</span>
+                <input type="text">
+            </div>   
         </div>
-
-        <div class="inputBox" >
-            <span>arrival airport</span>
-            <input type="text">
-        </div>   
-    </div>
-
-    <div class="form-container">
-        <div class="inputBox">
-            <span>date of departure</span>
-            <input type="date" placeholder="">
+    
+        <div class="form-container">
+            <div class="inputBox">
+                <span>date of departure</span>
+                <input type="date" placeholder="">
+            </div>
         </div>
-    </div>
-
-    <div class="form-container">
-        <div class="checkbox">
-            <span><b>Are others traveling with you?</b></span>
-            <input type="radio" name="trv-opt" id="opt1" onclick="hideTr()"> No <br> 
-            <input type="radio" name="trv-opt" id="opt2" onclick="showTr()"> Yes <font class="trv-opt2" style="display: none;"> . How many?</font> 
-            <input  class="trv-opt22" type="text" name="" id="" style="background: none; border-bottom: .1rem solid rgb(73, 64, 64); display: none;">
-        </div>
-        </div>
-
+    
         <div class="form-container">
             <div class="checkbox">
-                <span>Your VOA includes Airport Arrival Escort. You will be assisted and escorted for the entire process. 
-                    Do you want to add Airport Escort for your Departure?
-                    </span>
-                    <input type="radio" name="trv-opt" id="opt1"> Yes, $75 <br> 
-            <input type="radio" name="trv-opt" id="opt2"> No, thank you 
+                <span><b>Are others traveling with you?</b></span><br>
+                <input type="radio" name="trv-opt" id="opt1" onclick="hideTr()"> No <br> 
+                <input type="radio" name="trv-opt" id="opt2" onclick="showTr()"> Yes <font class="trv-opt2" style="display: none;"> . How many?</font> 
+                <input  class="trv-opt22" type="text" name="" id="" style="border-style: none; border: none; border-color: none; display: none; min-width: 250px;" >
             </div>
-        </div>
-
-        
-        <div>
-            
-            <div class="form-container" style="margin: 15px 0!important;">
-                <div class="inputBox" >
-                    <span><b>Will someone be in Nigeria to greet you at the airport? If yes, then please answer below: </b></span>
-                </div>
             </div>
+    
             <div class="form-container">
-            
-                <div class="inputBox">
-                    <span>Relative Name</span >
-                    <input type="text" placeholder="">
-                </div>
-        
-                <div class="inputBox" >
-                    <span>Relative phone</span>
-                    <input type="number">
-                </div>   
-            </div>
-       
-        </div>
-
-        <div>
-            
-            <div class="form-container">
-                <div class="inputBox"  style="margin: 15px 0!important;">
-                    <span><b>Emergency Contact in Home Country:</b> </span>
+                <div class="checkbox">
+                    <span>Your VOA includes Airport Arrival Escort. You will be assisted and escorted for the entire process. 
+                        Do you want to add Airport Escort for your Departure?
+                        </span><br>
+                        <input type="radio" name="trv-opt" id="opt1"> Yes, $75 <br> 
+                <input type="radio" name="trv-opt" id="opt2"> No, thank you 
                 </div>
             </div>
+    
             
-            <div class="form-container">
-            
-                <div class="inputBox" >
-                    <span>Relative Name</span >
-                    <input type="text" placeholder="">
-                </div>
-        
-                <div class="inputBox" >
-                    <span>Relative phone</span>
-                    <input type="number">
-                </div>   
-            </div>
-       
-        </div>
-        <div data-aos="fade-up">
-            
-            <div class="form-container" style="margin: 15px 0!important;">
-                <div class="inputBox"  style="background: #fff; text-align: center">
-                    <span>TRANSPORTATION </span>
-                </div>
-            </div>
-            <div class="form-container">
-            
-                <div class="checkbox" >
-                    <span><b>Please indicate if you will need transportation on the day of your Arrival and Departure</b>
-                        </span>
-                        <input type="checkbox" name="opt-trsp" id="opt1">I will need transportation from the airport 
-                        to my housing accommodations on the day of my Arrival ($50) <br> 
-                <input type="checkbox" name="opt-trsp" id="opt2"> I will need transportation from my housing 
-                accommodation to the airport of the day of my Departure. ($50) <br>
-                <input type="checkbox" name="opt-trsp" id="opt3">For my arrival, I will need transportation for 
-                my Relative to be picked up and brought to the airport to greet me, 
-                and then take us both to our accommodation from the airport ($100)  <br> 
-                <input type="checkbox" name="opt-trsp" id="opt4"> I will also need this for my Departure, 
-                to have my My Relative dropped off, after seeing me off and leaving the airport. ($100).
-                </div>
-        
-                <div class="checkbox" >
-                    <span><b> Would you like to have a security officer to escort you during your stay?</b>
-                        </span>
-                        <input type="radio" name="sec-opt" id="sec-no" onclick="hide()"> No <br> 
-                <input type="radio" name="sec-opt" id="sec-yes" onclick="show()"> Yes <br>
-                <div class="sec-opt2">
-                    &nbsp; &nbsp; <input type="checkbox" name="sec-opt" id=""> Private Officer  $40 daily<br>
-                &nbsp; &nbsp; <input type="checkbox" name="sec-opt" id=""> Police Officer   $60 daily<br>
-                &nbsp; &nbsp; <input type="checkbox" name="sec-opt" id=""> Visibly Armed $75 daily subcharge (in addition to above Officer Charge)<br>
+            <div>
                 
-
+                <div class="form-container" style="margin: 15px 0!important;">
+                    <div class="inputBox" >
+                        <span><b>Will someone be in Nigeria to greet you at the airport? If yes, then please answer below: </b></span>
+                    </div>
                 </div>
-                </div>  
-            </div>
-       
-        </div>
-        
-        <div data-aos="fade-up">
+                <div class="form-container">
+                
+                    <div class="inputBox">
+                        <span>Relative Name</span >
+                        <input type="text" placeholder="">
+                    </div>
             
-            <div class="form-container" style="margin: 15px 0!important;">
-                <div class="inputBox"  style="background: #fff; text-align: center">
-                    <span>T-SHIRTS </span>
+                    <div class="inputBox" >
+                        <span>Relative phone</span>
+                        <input type="number">
+                    </div>   
                 </div>
+           
             </div>
-            <div class="form-container">
+    
+            <div>
+                
+                <div class="form-container">
+                    <div class="inputBox"  style="margin: 15px 0!important;">
+                        <span><b>Emergency Contact in Home Country:</b> </span>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                
+                    <div class="inputBox" >
+                        <span>Relative Name</span >
+                        <input type="text" placeholder="">
+                    </div>
             
-                <div class="checkbox" ">
-                    <span><b>Queen  Tshirt $25</b>
-                        </span>
-
-                        <input type="checkbox" name="opt-Tsh" id="ts1"> S &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh" id="ts2"> M &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh" id="ts3"> L &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh" id="ts4"> XL &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh" id="ts5"> XXL &nbsp; &nbsp; 
+                    <div class="inputBox" >
+                        <span>Relative phone</span>
+                        <input type="number">
+                    </div>   
                 </div>
+           
             </div>
-
-            <div class="form-container">
+            <div data-aos="fade-up">
+                
+                <div class="form-container" style="margin: 15px 0!important;">
+                    <div class="inputBox"  style="background: #fff; text-align: center">
+                        <span>TRANSPORTATION </span>
+                    </div>
+                </div>
+                <div class="form-container">
+                
+                    <div class="checkbox" >
+                        <span><b>Please indicate if you will need transportation on the day of your Arrival and Departure</b>
+                            </span><br>
+                            <input type="checkbox" name="opt-trsp" id="opt1">I will need transportation from the airport 
+                            to my housing accommodations on the day of my Arrival ($50) <br> 
+                    <input type="checkbox" name="opt-trsp" id="opt2"> I will need transportation from my housing 
+                    accommodation to the airport of the day of my Departure. ($50) <br>
+                    <input type="checkbox" name="opt-trsp" id="opt3">For my arrival, I will need transportation for 
+                    my Relative to be picked up and brought to the airport to greet me, 
+                    and then take us both to our accommodation from the airport ($100)  <br> 
+                    <input type="checkbox" name="opt-trsp" id="opt4"> I will also need this for my Departure, 
+                    to have my My Relative dropped off, after seeing me off and leaving the airport. ($100).
+                    </div>
             
-                <div class="checkbox" >
-                    <span><b>Matching King T-Shirt $25</b>
-                        </span>
-
-                        <input type="checkbox" name="opt-Tsh2" id="ts11"> S &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh2" id="ts22"> M &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh2" id="ts33"> L &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh2" id="ts44"> XL &nbsp; &nbsp;
-                        <input type="checkbox" name="opt-Tsh2" id="ts55"> XXL &nbsp; &nbsp; 
+                    <div class="checkbox" >
+                        <span><b> Would you like to have a security officer to escort you during your stay?</b>
+                            </span><br>
+                            <input type="radio" name="sec-opt" id="sec-no" onclick="hide()"> No <br> 
+                    <input type="radio" name="sec-opt" id="sec-yes" onclick="show()"> Yes <br>
+                    <div class="sec-opt2">
+                        &nbsp; &nbsp; <input type="checkbox" name="sec-opt" id=""> Private Officer  $40 daily<br>
+                    &nbsp; &nbsp; <input type="checkbox" name="sec-opt" id=""> Police Officer   $60 daily<br>
+                    &nbsp; &nbsp; <input type="checkbox" name="sec-opt" id=""> Visibly Armed $75 daily subcharge (in addition to above Officer Charge)<br>
+                    
+    
+                    </div>
+                    </div>  
                 </div>
+           
             </div>
-
-            <div class="form-container">
             
-                <div class="checkbox" >
-                    <span><b>Choose Title</b>
-                        </span>
-
-                        <input type="radio" name="opt-title" id=""> The Queen has Arrived <br>
-                        <input type="radio" name="opt-title" id=""> The King has Arrived <br>
-                        <input type="radio" name="opt-title" id=""> Breaking The Spell <br>
-                        <input type="radio" name="opt-title" id=""> It’s In My DNA <br>
-                        <input type="radio" name="opt-title" id="" onclick="differ()"> choose a different title &nbsp; 
-                      
-                        <input   type="text" placeholder="input your choice" name=""
-                         class="diff" style="background: none; border-bottom: .1rem solid rgb(73, 64, 64); display: none;">
-       
+            <div data-aos="fade-up">
+                
+                <div class="form-container" style="margin: 15px 0!important;">
+                    <div class="inputBox"  style="background: #fff; text-align: center">
+                        <span>T-SHIRTS </span>
+                    </div>
                 </div>
+                <div class="form-container">
+                
+                    <div class="checkbox" ">
+                        <span><b>Queen  Tshirt $25</b>
+                            </span>
+    
+                            <input type="checkbox" name="opt-Tsh" id="ts1"> S &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh" id="ts2"> M &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh" id="ts3"> L &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh" id="ts4"> XL &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh" id="ts5"> XXL &nbsp; &nbsp; 
+                    </div>
+                </div>
+    
+                <div class="form-container">
+                
+                    <div class="checkbox" >
+                        <span><b>Matching King T-Shirt $25</b>
+                            </span>
+    
+                            <input type="checkbox" name="opt-Tsh2" id="ts11"> S &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh2" id="ts22"> M &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh2" id="ts33"> L &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh2" id="ts44"> XL &nbsp; &nbsp;
+                            <input type="checkbox" name="opt-Tsh2" id="ts55"> XXL &nbsp; &nbsp; 
+                    </div>
+                </div>
+    
+                <div class="form-container">
+                
+                    <div class="checkbox" >
+                        <span><b>Choose Title</b>
+                            </span><br>
+    
+                            <input type="radio" name="opt-title" id=""> The Queen has Arrived <br>
+                            <input type="radio" name="opt-title" id=""> The King has Arrived <br>
+                            <input type="radio" name="opt-title" id=""> Breaking The Spell <br>
+                            <input type="radio" name="opt-title" id=""> It’s In My DNA <br>
+                            <input type="radio" name="opt-title" id="" onclick="differ()"> choose a different title &nbsp; 
+                          
+                            <input   type="text" placeholder="input your choice" name=""
+                             class="diff" style="background: none; border-bottom: .1rem solid rgb(73, 64, 64); display: none;">
+           
+                    </div>
+                </div>
+           
             </div>
-       
-        </div>
-        <center><input type="submit" value="Proceed" class="btn" style="width: 98%;"></center>
-        
-        
-</form>
+            <div class="inputBox">
+            <input type="submit" value="Proceed" class="btn reg-btn">
+            </div>
+            
+            
+    </form>
+</section>
 
 {% endblock content %}

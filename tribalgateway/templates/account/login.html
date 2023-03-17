@@ -8,28 +8,30 @@
 {% block content%}
 
 
-<form action="{% url 'login' %}" class="login-form" method="post">
-    {% csrf_token %}
-    <div class="inputBox">
-        <span>username</span>
-        <input type="text" placeholder="enter your email or first name" name="username"> 
-    </div>
-
-    <div class="inputBox">
-        <span>password</span>
-        <input type="password" placeholder="enter your password" name="password">
-        {% if request.GET.next %}
-        <!-- To redirect to previous page after login -->
-        <input type="hidden" value="{{request.GET.next}}" name="next">
-        {% endif %}
-        <input type="submit" class="btn" value="Login">
-        <hr style="width: 90%; align-self: center; margin-left: 10px;">
-    </div>
-
-   <div class="inputBox"> Don't have an account yet? <a href="{%url 'signup' %}" style="text-align: center; color: #f3a93d; font-weight: bolder;">Signup</a></div>
+<section class="login">
+    <form action="{% url 'login' %}" class="login-form" method="post">
+        {% csrf_token %}
+        <div class="inputBox">
+            <span>username</span>
+            <input type="text" placeholder="enter your email or first name" name="username"> 
+        </div>
     
-
-
-</form>
-
+        <div class="inputBox">
+            <span>password</span>
+            <input type="password" placeholder="enter your password" name="password">
+            {% if request.GET.next %}
+            <!-- To redirect to previous page after login -->
+            <input type="hidden" value="{{request.GET.next}}" name="next">
+            {% endif %}
+            <input type="submit" class="btn" value="Login">
+            <hr style="width: 90%; align-self: center; margin-left: 10px;">
+        </div>
+    
+       <div class="inputBox"> Don't have an account yet? <a href="{%url 'signup' %}" style="text-align: center; color: #f3a93d; font-weight: bolder;">Signup</a></div>
+        
+    
+    
+    </form>
+    
+</section>
 {% endblock content%}

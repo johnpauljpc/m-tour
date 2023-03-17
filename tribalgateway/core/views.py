@@ -5,6 +5,12 @@ from .decorators import check_if_authenticated
 
 # Create your views here.
 def index(request):
+    try:
+        request.GET['get-started']
+        messages.success(request, f"Congratulations <b>{request.user}</b>, Your application was successful")
+        return redirect('/')
+    except:
+       pass
     return render(request, "core/index.html")
 
 @check_if_authenticated
