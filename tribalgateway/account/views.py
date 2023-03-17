@@ -36,6 +36,10 @@ class signupView(View):
 
 class LoginView(View):
     def get(self, request):
+        if request.GET.get('next'):
+            messages.info(request, f'To continue, please <b>login</b>!')
+        else:
+            messages.info(request, 'Hi there, welcome back')
         return render(request, 'account/login.html')
 
     def post(self, request):
@@ -50,6 +54,7 @@ class LoginView(View):
                 messages.success(request, f'welcome  <b>{user.username}</b>,  You are now logged in')
                 # redirecting to the previous page if any
                 if 'next' in request.POST:
+                    
                     return redirect(request.POST.get('next'))
                 else:
                     return redirect('/')
