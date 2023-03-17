@@ -7,6 +7,7 @@ from PIL import Image
 class Usermodel(AbstractUser):
     first_name = models.CharField(max_length= 100)
     last_name = models.CharField(max_length=100)
+    phone_number =models.CharField(max_length=20)
     passport = models.ImageField(default='images/profile.jpeg', upload_to="images/users_passport")
     email = models.EmailField(unique=True)
     nationality =  CountryField(multiple = False)
