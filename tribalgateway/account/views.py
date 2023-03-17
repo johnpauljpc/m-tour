@@ -41,14 +41,18 @@ class LoginView(View):
     def post(self, request):
         username = request.POST['username']
         password = request.POST['password']
-        print ('>>>>              ', request.POST)
+
         if username and password:
             user = authenticate(username=username, password=password)
             if user:
-                print('>>>>>>>>>>>>>>>  ', user)  
+                 
                 login(request, user)
                 messages.success(request, f'welcome  <b>{user.username}</b>,  You are now logged in')
-                return redirect('/')
+                # redirecting to the previous page if any
+                if 'next' in request.POST:
+                    return redirect(request.POST.get('next'))
+                else:
+                    return redirect('/')
 
         messages.error(request, 'Your credentials are invalid, try again')
         return render(request, 'account/login.html')

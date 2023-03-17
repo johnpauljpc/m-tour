@@ -18,6 +18,10 @@
     <div class="inputBox">
         <span>password</span>
         <input type="password" placeholder="enter your password" name="password">
+        {% if request.GET.next %}
+        <!-- To redirect to previous page after login -->
+        <input type="hidden" value="{{request.GET.next}}" name="next">
+        {% endif %}
         <input type="submit" class="btn" value="Login">
         <hr style="width: 90%; align-self: center; margin-left: 10px;">
     </div>
