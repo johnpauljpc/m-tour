@@ -259,6 +259,85 @@ a{
 	
 }
 
+/* Contact */
+.contact-flex{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+.contact-flex .left{
+	width: 50%;
+}
+
+.contact-flex .right{
+	width: 50%;
+}
+.contact-input {
+	display: flex;
+	 flex-direction: row;
+	 /* flex-wrap: wrap; */
+	width: 90%;
+	
+}
+
+.input{
+	width: 100%;
+	
+	padding: 5px 0px;
+	
+}
+.input span{
+	display: block;
+}
+.input input{
+	width: 90%;
+	padding: 10px;
+	border-radius: 5px;
+	margin: auto;
+	border-top: none;
+	background-color: #f6f4f4ee;
+	box-shadow: var(--box-shadow);
+	font-size: 20px;
+}
+
+textarea{
+	width: 85%;
+	padding: 10px;
+	border-radius: 5px;
+	margin: auto;
+	border-top: none;
+	background-color: #f6f4f4ee;
+	box-shadow: var(--box-shadow);
+	font-size: 20px;
+}
+
+.input input:active{
+	border-top: none !important;
+	border-style: none;
+	box-shadow: var(--box-shadow);
+
+}
+.input .btn {
+	width: 50%;
+	background-color: #f3a93d;
+	color: whitesmoke;
+	border: none;
+
+}
+
+.input .btn:hover{
+	background-color: #b08a50;
+}
+.contact-heading{
+	text-align: center; 
+	border-bottom: solid 1px rgb(211, 202, 35);
+	font-size: 25px;
+}
+.send-message-heading{
+	text-align: center; 
+	margin-bottom: 15px;
+	display: none;
+}
 
 
 
@@ -351,5 +430,21 @@ font-size: 20px;
 	}
 	.messages p{
 		font-size: 18px;
+	}
+	.contact-flex{
+		display: block;
+	}
+	.contact-flex .left, .contact-flex .right{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.contact-input{
+		width: 100%;
+	}
+	textarea{
+		width: 95%;
+	}
+	.send-message-heading{
+		display: block;
 	}
  }
