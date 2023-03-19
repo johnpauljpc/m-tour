@@ -39,7 +39,11 @@
                 </ul>
             </nav>
             {% if user.is_authenticated%}
+            {% if user.passport.url %}
             <i style="margin-right: 10px; " ><img src="{{user.passport.url}}" alt="" class="passport pass2"></i>
+            {% else %}
+            <i style="margin-right: 10px; " >{{user.first_name}}</i>
+            {% endif %}
             {% endif %}
         </div>
 

@@ -2,21 +2,40 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, decorators
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 from .forms import userCreationForm
 
 class signupView(View):
     def get(self, request):
-        form = userCreationForm()
-        context = {'form':form}
-        return render(request, 'account/signup.html', context)
+        
+        return render(request, 'account/signup.html')
     def post(self, request, *args, **kwargs):
-        form = userCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "account created")
-            return redirect('index')
+    
+        fname = request.POST['first_name']
+        lname = request.POST['last_name']
+        phone_number = request.POST['phone_number']
+        email = request.POST['email']
+        nationality = request.POST['nationality']
+        password = request.POST['password1']
+        confirm = request.POST['password2']
+        passport = request.POST['passport']
+
+        usermodel = get_user_model()
+        if(password == confirm):
+            u = usermodel.objects.create_user(username =fname, first_name = fname, last_name = lname, phone_number = phone_number,
+                                        email = email, nationality = nationality,password = password, passport = passport)
+            # u.set_password(password=password)
+            messages.success(request, f"account for {fname} successfully created! \n please login")
+            return redirect('login')
+
+            print('>>>>>>>>>>1                           >>>')
+            print(usermodel)
+            print('>>>>>>>>>>                           >>>2')
+            print(u)
+        else:
+            messages.error(request, 'Account not created, something is wrong. please try again!')
         return render(request, 'account/signup.html')
     
 
